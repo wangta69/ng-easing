@@ -88,7 +88,7 @@ export class NgEasingService {
     * duration : milisecond
     * delay : milisecond
     */
-    anmaionStart(params, onUpdate, onComplete) {
+    anmaionStart(params, onUpdate, onComplete?) {
         params.ease = this.EasingFunctions[params.ease];
         params.delay = typeof params.delay === 'undefined' ? 0 : params.delay;
         this.startAnimation(
