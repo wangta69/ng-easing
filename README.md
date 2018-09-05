@@ -1,5 +1,5 @@
-# ng-functions
-A collection of commonly used functions for angular [Tested for angular6]
+# ng-easing
+Ease Animation for angular [Tested for angular6]
 
 ## Installation
 ```
