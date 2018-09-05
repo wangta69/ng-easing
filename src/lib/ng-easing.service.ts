@@ -54,7 +54,6 @@ export class NgEasingService {
     */
     startAnimation(params, onUpdate, onComplete) {
         // Linear interpolation
-
         const duration = params.duration;
         const from = params.from;
         const to = params.to;
@@ -64,8 +63,6 @@ export class NgEasingService {
         const lerp = (source, target, amount) => source + amount * (target - source);
         // Animation start time
         const start = Date.now() - delay;
-
-        console.log(start);
 
         const animationFrame = () => {
             const now = Date.now();
@@ -89,15 +86,26 @@ export class NgEasingService {
     * delay : milisecond
     */
     anmaionStart(params, onUpdate, onComplete?) {
+
+        const checkNum = n => typeof n === 'number' ? n : null;
+        const checkFunc = f => typeof f === 'function' ? f : _ => _;
+
+        params.duration = checkNum(params.duration);
+        params.from = checkNum(params.from);
+        params.to = checkNum(params.to);
+        params.delay = checkNum(params.delay);
         params.ease = this.EasingFunctions[params.ease];
-        params.delay = typeof params.delay === 'undefined' ? 0 : params.delay;
+
+        const onUpdateFunc = checkFunc(onUpdate);
+        const onCompleteFunc = checkFunc(onComplete);
+
         this.startAnimation(
                 params,
               (value) => {
-                  onUpdate(value);
+                  onUpdateFunc(value);
               },
               (value) => {
-                  onComplete(value);
+                  onCompleteFunc(value);
               });
     }
 }

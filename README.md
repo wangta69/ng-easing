@@ -25,8 +25,8 @@ constructor(protected easeSvc: NgEasingService) {
 }
 
 this.easeSvc.anmaionStart({'duration': 10000, 'from': 0, 'to': 6800, 'ease': 'easeInQuart', 'delay': 0}, (v) => {
-  console.log(v);//
-  document.getElementById('a').style.transform = 'rotate('+ v +'deg)'
+  console.log(v);
+  document.getElementById('sampleDiv').style.transform = 'rotate('+ v +'deg)'
  },
   function(v) {
       console.log('anmateDone at :' + v);
@@ -38,7 +38,7 @@ anmaionStart(params, onUpdate, onComplete);
 params Object {duration, from, to, ease, delay}
 duration : milisecond
 ease: refer ease Sample below
-delay : milisecond
+delay : milisecond (optional)
 onUpdate : CallBackFunciton;
 onComplete:  CallBackFunciton;
 ```
