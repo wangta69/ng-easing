@@ -1,6 +1,6 @@
 {
   "name": "ng-easing",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "peerDependencies": {
   },
   "main": "bundles/ng-easing.umd.js",

@@ -87,7 +87,7 @@ export class NgEasingService {
     * duration : milisecond
     * delay : milisecond
     */
-    anmaionStart(params: any, onUpdate: (body: any) => void, onComplete?: (body: any) => void) {
+    animationStart(params: any, onUpdate: (body: any) => void, onComplete?: (body: any) => void) {
 
         const checkNum = n => typeof n === 'number' ? n : null;
         const checkFunc = f => typeof f === 'function' ? f : _ => _;
